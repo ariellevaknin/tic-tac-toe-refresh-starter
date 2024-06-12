@@ -1,4 +1,5 @@
 const Screen = require("./screen");
+const TTT = require("./ttt");
 
 class Cursor {
 
@@ -23,19 +24,35 @@ class Cursor {
   }
 
   up() {
-    // Move cursor up
+    if (this.row > 0){
+      resetBackgroundColor();
+      this.row--;
+      setBackgroundColor();
+    }
   }
 
   down() {
-    // Move cursor down
+    if (this.row < 2){
+      resetBackgroundColor();
+      this.row++;
+      setBackgroundColor();
+    }
   }
 
   left() {
-    // Move cursor left
+    if (this.col > 0){
+      resetBackgroundColor();
+      this.col--;
+      setBackgroundColor();
+    }
   }
 
   right() {
-    // Move cursor right
+    if (this.col < 2){
+      resetBackgroundColor();
+      this.col++;
+      setBackgroundColor();
+    }
   }
 
 }
